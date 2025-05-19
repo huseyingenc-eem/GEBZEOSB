@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="sticky top-0 z-50 py-4 px-6">
+        <header class="relative bg-white shadow-xl rounded-xl flex justify-between items-center px-6 py-4">
+            <a href="/" id="logo-link"
+                class="text-3xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">
+                SiteLogosu
+            </a>
+
+            <nav class="hidden md:flex space-x-4">
+                <a href="#"
+                    class="link text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium transition-colors">Hakkımızda</a>
+                <a href="#"
+                    class="link text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium transition-colors">Hizmetler</a>
+                <a href="#"
+                    class="link text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium transition-colors">İletişim</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="#"
+                    class="text-gray-600 hover:text-indigo-600 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                    Giriş Yap
+                </a>
+                <a href="#"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+                    Kayıt Ol
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button"
+                    class="p-2 rounded-md border border-indigo-200 bg-white text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700 transition-colors">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobil Dropdown Menü -->
+            <div id="mobile-menu"
+                class="absolute top-full right-0 mt-2 w-35 bg-white shadow-lg rounded-lg z-50 hidden opacity-0 scale-95 transition-all duration-300 ease-in-out">
+                <nav class="px-4 py-3 space-y-2 text-center">
+                    <a href="#" class="link block text-gray-700 hover:text-indigo-600 text-base font-medium">Ana
+                        Sayfa</a>
+                    <a href="#"
+                        class="link block text-gray-700 hover:text-indigo-600 text-base font-medium">Hakkımızda</a>
+                    <a href="#"
+                        class="link block text-gray-700 hover:text-indigo-600 text-base font-medium">Hizmetler</a>
+                    <a href="#"
+                        class="link block text-gray-700 hover:text-indigo-600 text-base font-medium">İletişim</a>
+                    <hr>
+                    <a href="#" class="link block text-gray-700 hover:text-indigo-600 text-base font-medium">Giriş
+                        Yap</a>
+                    <a href="#"
+                        class="block bg-indigo-600 text-white hover:bg-indigo-700 px-3 py-1.5 rounded-md text-center text-sm font-medium transition">
+                        Kayıt Ol
+                    </a>
+                </nav>
+            </div>
+        </header>
+    </div> <!-- header bitti -->
+    
+    <!-- Blur Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-40 hidden"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+.link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 0.5rem 0;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #6366F1;
+    transition: width 0.3s ease-in-out;
+}
+
+.link:hover::before {
+    width: 100%;
+}
+
+
+.dot {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.dot:hover {
+  transform: scale(1.1);
+}
