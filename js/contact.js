@@ -1,37 +1,59 @@
+// js/contact.js
 document.addEventListener('DOMContentLoaded', function () {
-    // Switch/toggle düğmesini ve içindeki hareket eden daireyi seçiyoruz
-    const switchButton = document.querySelector('button[role="switch"][aria-labelledby="switch-1-label"]');
+    const switchButton = document.getElementById('privacy-switch');
+    const hiddenCheckbox = document.getElementById('privacy-policy-checkbox');
 
-    if (switchButton) {
+    if (switchButton && hiddenCheckbox) {
         const switchCircle = switchButton.querySelector('span[aria-hidden="true"]');
 
-        if (switchCircle) {
-            switchButton.addEventListener('click', function () {
-                // Mevcut durumu al (aria-checked attribute'u string döner)
-                const isChecked = this.getAttribute('aria-checked') === 'true';
+        if (!switchCircle) {
+            console.error('Switch button için hareketli daire (span[aria-hidden="true"]) bulunamadı.');
+            return; // Daire yoksa devam etme
+        }
 
-                if (isChecked) {
-                    // Kapatma (Not Enabled durumu)
-                    this.setAttribute('aria-checked', 'false');
-                    this.classList.remove('bg-indigo-600'); // Aktif arka planını kaldır
-                    this.classList.add('bg-gray-200');      // Pasif arka planını ekle
+        function updateSwitchVisuals(isChecked) {
+            switchButton.setAttribute('aria-checked', isChecked.toString());
+            if (isChecked) {
+                switchButton.classList.remove('bg-gray-200');
+                switchButton.classList.add('bg-indigo-600');
+                switchCircle.classList.remove('translate-x-0');
+                switchCircle.classList.add('translate-x-3.5');
+            } else {
+                switchButton.classList.remove('bg-indigo-600');
+                switchButton.classList.add('bg-gray-200');
+                switchCircle.classList.remove('translate-x-3.5');
+                switchCircle.classList.add('translate-x-0');
+            }
+        }
 
-                    switchCircle.classList.remove('translate-x-3.5'); // Dairenin sağa kaymasını kaldır
-                    switchCircle.classList.add('translate-x-0');        // Daireyi sola (başlangıç) pozisyonuna getir
-                } else {
-                    // Açma (Enabled durumu)
-                    this.setAttribute('aria-checked', 'true');
-                    this.classList.remove('bg-gray-200');      // Pasif arka planını kaldır
-                    this.classList.add('bg-indigo-600');       // Aktif arka planını ekle
+        // Görsel butona tıklandığında
+        switchButton.addEventListener('click', function () {
+            // Checkbox'ın mevcut durumunu al ve tersine çevir
+            const newCheckedState = !hiddenCheckbox.checked;
+            hiddenCheckbox.checked = newCheckedState; // Checkbox'ın durumunu programatik olarak değiştir
+            // Checkbox'ın 'change' event'i tetikleneceği için updateSwitchVisuals otomatik çağrılacak.
+            // İsterseniz doğrudan da çağırabilirsiniz: updateSwitchVisuals(newCheckedState);
+            // Ancak 'change' event'ini dinlemek daha merkezi bir kontrol sağlar.
+            // Eğer 'change' event'i programatik değişikliklerde tetiklenmiyorsa (tarayıcıya göre değişebilir),
+            // aşağıdaki satırı aktif hale getirin:
+            // updateSwitchVisuals(newCheckedState);
+        });
 
-                    switchCircle.classList.remove('translate-x-0');        // Dairenin sol pozisyonunu kaldır
-                    switchCircle.classList.add('translate-x-3.5');       // Daireyi sağa kaydır
-                }
-            });
-        } else {
-            console.warn('Switch button için hareketli daire (span) bulunamadı.');
+        // Gizli checkbox'ın durumu değiştiğinde (etikete tıklama veya JS ile değişiklik sonrası)
+        hiddenCheckbox.addEventListener('change', function() {
+            updateSwitchVisuals(this.checked);
+        });
+
+        // Sayfa yüklendiğinde anahtarın görselini checkbox'ın başlangıç durumuna göre ayarla
+        updateSwitchVisuals(hiddenCheckbox.checked);
+        
+    } else {
+        // Hangi elemanın bulunamadığını konsola yazdırarak hata ayıklamaya yardımcı ol
+        if (!switchButton) {
+            console.warn('ID\'si "privacy-switch" olan buton bulunamadı.');
+        }
+        if (!hiddenCheckbox) {
+            console.warn('ID\'si "privacy-policy-checkbox" olan checkbox bulunamadı.');
         }
     }
-    // Diğer form elemanları standart HTML davranışlarına sahip olduğu için ek JS gerektirmez.
-    // Form gönderimi, doğrulama gibi işlemler için gerekirse buraya ek kod yazılabilir.
 });

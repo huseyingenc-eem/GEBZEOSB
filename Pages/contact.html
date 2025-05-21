@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind CSS Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="./js/script.js" defer></script>
-    <script src="js/layout/nav-bar.js"></script>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../js/contact.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="..//js/layout/nav-bar.js" defer></script>
+
 </head>
 
 <body class="bg-gray-100">
-
 
     <header class="sticky top-0 bg-white shadow-sm z-50">
         <div class="border-b border-gray-200">
@@ -22,7 +23,7 @@
                 <div class="lg:flex lg:items-center lg:space-x-4">
                     <a href="#" class="text-xs font-medium text-gray-500 hover:text-gray-700">Siparişlerim</a>
                     <a href="#" class="text-xs font-medium text-gray-500 hover:text-gray-700">Müşteri Hizmetleri</a>
-                    <a href="Pages/contact.html"
+                    <a href="/contact.html"
                         class="text-xs font-semibold text-gray-500 hover:text-purple-700">İletişim</a>
                     <a href="#" class="text-xs font-medium text-purple-600 hover:text-gray-700">Satıcı Ol</a>
                 </div>
@@ -31,7 +32,7 @@
 
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:p-6 lg:px-8" aria-label="Global">
             <div class="flex items-center lg:flex-1">
-                <a href="/index.html" class="-m-1.5 p-1.5">
+                <a href="../index.html" class="-m-1.5 p-1.5">
                     <span class="sr-only">Şirketiniz</span>
                     <img class="h-8 w-auto" src="/public/images/trendyol-seeklogo.svg" alt="Şirket Logosu">
                 </a>
@@ -89,7 +90,7 @@
                                     <svg class="size-6 text-gray-600 group-hover:text-indigo-600" fill="none"
                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9 17.25v1.007a3 3 0 0 1-.375 1.437H5.25A2.25 2.25 0 0 1 3 16.5V5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25v11.25a2.25 2.25 0 0 1-2.25 2.25h-3.875a3 3 0 0 1-.375-1.437V17.25M6 12h12" />
+                                            d="M9 17.25v1.007a3 3 0 01-.375 1.437H5.25A2.25 2.25 0 013 16.5V13.5a2.25 2.25 0 012.25-2.25h1.875m6.75 0a2.25 2.25 0 002.25-2.25V9a2.25 2.25 0 00-2.25-2.25H9.375m0 S8.25 7.5 8.25 6.75V4.5M9 17.25H4.5M9 17.25c0-2.485 2.015-4.5 4.5-4.5M13.5 7.5c0-2.485 2.015-4.5 4.5-4.5m-4.5 4.5H18" />
                                     </svg>
                                 </div>
                                 <div class="flex-auto"><a href="#"
@@ -155,8 +156,7 @@
                 </div>
 
                 <a href="#" class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">İndirimler</a>
-                <a href="/Pages/calculator.html"
-                    class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">Hesap Makinesi</a>
+                <a href="#" class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">Yardım</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-4">
                 <a href="#" class="flex items-center gap-x-1 text-sm/6 font-medium text-gray-500 hover:text-indigo-600">
@@ -279,197 +279,146 @@
         </div>
     </header>
 
-    <section class="lg:py-0 py-6">
-        <div class="relative h-[30rem]">
-            <div class="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
-                <div id="slider" class="flex transition-transform duration-500 ease-in-out w-[100%] h-full">
-                    <img src="https://picsum.photos/800/500?random=1" class="w-full h-full object-cover flex-shrink-0"
-                        alt="Slayt 1" />
-                    <img src="https://picsum.photos/800/500?random=2" class="w-full h-full object-cover flex-shrink-0"
-                        alt="Slayt 2" />
-                    <img src="https://picsum.photos/800/500?random=3" class="w-full h-full object-cover flex-shrink-0"
-                        alt="Slayt 3" />
-                </div>
-                <button id="prev" aria-label="Önceki Slayt"
-                    class="absolute top-1/2 left-4 transform -translate-y-1/2 backdrop-blur-md bg-white/30 text-indigo-600 hover:bg-white/50 rounded-full p-2 shadow transition z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
 
-                <button id="next" aria-label="Sonraki Slayt"
-                    class="absolute top-1/2 right-4 transform -translate-y-1/2 backdrop-blur-md bg-white/30 text-indigo-600 hover:bg-white/50 rounded-full p-2 shadow transition z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
 
-                <div id="slider-dots"
-                    class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center gap-2 z-20">
-                    <span class="dot w-3 h-3 rounded-full bg-indigo-600 cursor-pointer"
-                        aria-label="Slayt 1'e git"></span>
-                    <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"
-                        aria-label="Slayt 2'ye git"></span>
-                    <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer" aria-label="Slayt 3'e git"></span>
+    <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-xl border">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true">
+            <div class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Bize Ulaşın</h2>
+            <p class="mt-2 text-lg/8 text-gray-600">Sorularınız, önerileriniz veya işbirliği talepleriniz için aşağıdaki
+                formu doldurarak bize ulaşabilirsiniz.</p>
+        </div>
+        <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                    <label for="first-name" class="block text-sm/6 font-semibold text-gray-900">Adınız</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            required minlength="2">
+                    </div>
                 </div>
+                <div>
+                    <label for="last-name" class="block text-sm/6 font-semibold text-gray-900">Soyadınız</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                            class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            required minlength="2">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="company" class="block text-sm/6 font-semibold text-gray-900">Firma Adı (isteğe
+                        bağlı)</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="email" class="block text-sm/6 font-semibold text-gray-900">E-posta Adresiniz</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="email" id="email" autocomplete="email"
+                            class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            required>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="phone-number" class="block text-sm/6 font-semibold text-gray-900">Telefon
+                        Numarası (isteğe bağlı)</label>
+                    <div class="mt-2.5">
+                        <div
+                            class="flex rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 has-[input:focus-within]:ring-2 has-[input:focus-within]:ring-inset has-[input:focus-within]:ring-indigo-600">
+                            <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                                <select id="country" name="country" autocomplete="country" aria-label="Ülke Kodu"
+                                    class="col-start-1 row-start-1 w-full appearance-none rounded-l-md border-0 bg-transparent py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                                    <option>TR (+90)</option>
+                                    <option>US (+1)</option>
+                                    <option>DE (+49)</option>
+                                </select>
+                                <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="tel" name="phone-number" id="phone-number" autocomplete="tel"
+                                class="block min-w-0 flex-1 rounded-r-md border-0 bg-transparent py-2 pr-3 pl-3 text-base text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
+                                placeholder="555 123 4567" pattern="[0-9\s\-\(\)]{7,15}">
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block text-sm/6 font-semibold text-gray-900">Mesajınız</label>
+                    <div class="mt-2.5">
+                        <textarea name="message" id="message" rows="4"
+                            class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            required minlength="10"></textarea>
+                    </div>
+                </div>
+                <div class="flex gap-x-3 sm:col-span-2 items-center">
+                    <input type="checkbox" id="privacy-policy-checkbox" name="privacy-policy-accepted" class="sr-only"
+                        required>
+
+                    <div class="flex h-6 items-center">
+                        <button type="button" id="privacy-switch"
+                            class="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-gray-900/5 transition-colors duration-200 ease-in-out ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            role="switch" aria-checked="false" aria-labelledby="privacy-policy-label-text">
+                            <span class="sr-only">Politikaları kabul et</span>
+                            <span aria-hidden="true"
+                                class="size-4 translate-x-0 transform rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                        </button>
+                    </div>
+                    <label for="privacy-policy-checkbox" class="text-sm/6 text-gray-600 cursor-pointer"
+                        id="privacy-policy-label-text">
+                        Bunu seçerek <a href="#" class="font-semibold text-indigo-600 hover:underline">gizlilik
+                            politikamızı</a> kabul
+                        etmiş olursunuz.
+                    </label>
+                </div>
+            </div>
+            <div class="mt-10">
+                <button type="submit"
+                    class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Gönder</button>
+            </div>
+        </form>
+    </div>
+
+
+    <section aria-labelledby="map-heading" class="py-16 sm:py-24 bg-white"> 
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center mb-12 lg:mb-16">
+                <h2 id="map-heading" class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Konumumuz
+                </h2>
+                <p class="mt-4 text-lg leading-8 text-gray-600">
+                    Bize kolayca ulaşabilmeniz için adresimiz ve harita üzerindeki yerimiz aşağıdadır.
+                </p>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-xl border">
+               
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.098430851951!2d29.420618076735007!3d40.70246513876929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac76c05549a91%3A0xc95636f493777f59!2sGebze%20Center!5e0!3m2!1str!2str!4f19.07745149862892"
+                    width="100%" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Konumumuz Haritada">
+                </iframe>
+            </div>
+           
+            <div class="mt-8 text-center text-gray-700">
+                <p class="text-lg font-semibold">ETicaret</p>
+                <p class="text-sm">Osmanyılmaz Mah.</p>
+                <p class="text-sm">Gebze/ Kocaeli, 41400]</p>
+                <p class="mt-2 text-sm">Telefon: <a href="tel:+90XXXXXXXXXX"
+                        class="text-indigo-600 hover:text-indigo-500">+90 (XXX) XXX XX XX</a></p>
             </div>
         </div>
     </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">Sayfa Başlığı</h1>
-            <p class="mt-4 text-gray-700">Burası sayfanın ana içeriğidir. Tailwind CSS ile stil vermek çok kolay!</p>
-        </div>
-    </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container">
-            <h1 class="text-3xl font-bold">Sayfa Başlığı</h1>
-            <p class="mt-4 text-gray-700">Burası sayfanın ana içeriğidir. Tailwind CSS ile stil vermek çok kolay!</p>
-        </div>
-    </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container">
-            <h1 class="text-3xl font-bold">Sayfa Başlığı</h1>
-            <p class="mt-4 text-gray-700">Burası sayfanın ana içeriğidir. Tailwind CSS ile stil vermek çok kolay!</p>
-        </div>
-    </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container">
-            <h1 class="text-3xl font-bold">Sayfa Başlığı</h1>
-            <p class="mt-4 text-gray-700">Burası sayfanın ana içeriğidir. Tailwind CSS ile stil vermek çok kolay!</p>
-        </div>
-    </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container">
-            <h1 class="text-3xl font-bold">Sayfa Başlığı</h1>
-            <p class="mt-4 text-gray-700">Burası sayfanın ana içeriğidir. Tailwind CSS ile stil vermek çok kolay!</p>
-        </div>
-    </section>
-
-    <section class="lg:py-16 py-6">
-        <div class="container">
-            <div class="bg-white py-24 sm:py-32">
-                <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="mx-auto max-w-2xl lg:mx-0">
-                        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">From the
-                            blog</h2>
-                        <p class="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.
-                        </p>
-                    </div>
-                    <div
-                        class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                        <article class="flex max-w-xl flex-col items-start justify-between">
-                            <div class="flex items-center gap-x-4 text-xs">
-                                <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-                                <a href="#"
-                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-                            </div>
-                            <div class="group relative">
-                                <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                    <a href="#">
-                                        <span class="absolute inset-0"></span>
-                                        Boost your conversion rate
-                                    </a>
-                                </h3>
-                                <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Illo sint voluptas. Error
-                                    voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo
-                                    necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel.
-                                    Iusto corrupti dicta.</p>
-                            </div>
-                            <div class="relative mt-8 flex items-center gap-x-4">
-                                <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="" class="size-10 rounded-full bg-gray-50">
-                                <div class="text-sm/6">
-                                    <p class="font-semibold text-gray-900">
-                                        <a href="#">
-                                            <span class="absolute inset-0"></span>
-                                            Michael Foster
-                                        </a>
-                                    </p>
-                                    <p class="text-gray-600">Co-Founder / CTO</p>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="flex max-w-xl flex-col items-start justify-between">
-                            <div class="flex items-center gap-x-4 text-xs">
-                                <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-                                <a href="#"
-                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-                            </div>
-                            <div class="group relative">
-                                <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                    <a href="#">
-                                        <span class="absolute inset-0"></span>
-                                        Boost your conversion rate
-                                    </a>
-                                </h3>
-                                <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Illo sint voluptas. Error
-                                    voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo
-                                    necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel.
-                                    Iusto corrupti dicta.</p>
-                            </div>
-                            <div class="relative mt-8 flex items-center gap-x-4">
-                                <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="" class="size-10 rounded-full bg-gray-50">
-                                <div class="text-sm/6">
-                                    <p class="font-semibold text-gray-900">
-                                        <a href="#">
-                                            <span class="absolute inset-0"></span>
-                                            Michael Foster
-                                        </a>
-                                    </p>
-                                    <p class="text-gray-600">Co-Founder / CTO</p>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="flex max-w-xl flex-col items-start justify-between">
-                            <div class="flex items-center gap-x-4 text-xs">
-                                <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-                                <a href="#"
-                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-                            </div>
-                            <div class="group relative">
-                                <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                    <a href="#">
-                                        <span class="absolute inset-0"></span>
-                                        Boost your conversion rate
-                                    </a>
-                                </h3>
-                                <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Illo sint voluptas. Error
-                                    voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo
-                                    necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel.
-                                    Iusto corrupti dicta.</p>
-                            </div>
-                            <div class="relative mt-8 flex items-center gap-x-4">
-                                <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="" class="size-10 rounded-full bg-gray-50">
-                                <div class="text-sm/6">
-                                    <p class="font-semibold text-gray-900">
-                                        <a href="#">
-                                            <span class="absolute inset-0"></span>
-                                            Michael Foster
-                                        </a>
-                                    </p>
-                                    <p class="text-gray-600">Co-Founder / CTO</p>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- More posts... -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="border-t border-default-200 bg-white mt-auto">
+    <footer class="border-t border-default-200 ">
         <div class="container mx-auto px-4">
             <div class="grid lg:grid-cols-3 items-center gap-6 lg:py-10 py-6">
                 <div class="lg:col-span-2">
